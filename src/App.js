@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
+import "./App.css";
 
 class App extends React.Component {
   state = {
@@ -25,24 +26,26 @@ class App extends React.Component {
   render() {
     const { isLoading, movies } = this.state;
     return (
-      <section class="container">
-        {/* state를 통해 로딩/ 준비완료 표시 */}
+      <section className="container">
         {isLoading ? (
-          <div class="loader">
-            <span class="loader_text">Loading ...</span>
+          <div className="loader">
+            <span className="loader_text">Loading ...</span>
           </div>
         ) : (
-          // map을 통해 api에서 받은 데이터를 내가 쓰고자하는 형식에 맞게 가져온후 새로운 Movie로 반환
-          movies.map((movie) => (
-            <Movie
-              key={movie.id}
-              id={movie.id}
-              year={movie.year}
-              title={movie.title}
-              summary={movie.summary}
-              poster={movie.medium_cover_image}
-            />
-          ))
+          <div className="movies">
+            {movies.map((movie) => (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                year={movie.year}
+                title={movie.title}
+                summary={movie.summary}
+                poster={movie.medium_cover_image}
+                genres={movie.genres}
+                rating={movie.rating}
+              />
+            ))}
+          </div>
         )}
       </section>
     );
