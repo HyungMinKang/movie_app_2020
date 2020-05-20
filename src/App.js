@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
 import "./App.css";
+import Header from "./Header";
+import Footer from "./Footer";
 
 class App extends React.Component {
   state = {
@@ -15,9 +17,7 @@ class App extends React.Component {
       data: {
         data: { movies },
       },
-    } = await axios.get(
-      "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
-    );
+    } = await axios.get("https://yts-proxy.now.sh/list_movies.json?");
     this.setState({ movies, isLoading: false });
   };
   componentDidMount() {
@@ -33,6 +33,7 @@ class App extends React.Component {
           </div>
         ) : (
           <div className="movies">
+            <Header />
             {movies.map((movie) => (
               <Movie
                 key={movie.id}
@@ -45,6 +46,7 @@ class App extends React.Component {
                 rating={movie.rating}
               />
             ))}
+            <Footer />
           </div>
         )}
       </section>

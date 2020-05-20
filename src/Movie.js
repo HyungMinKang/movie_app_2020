@@ -5,7 +5,9 @@ import "./Movie.css";
 function Movie({ year, title, summary, poster, genres, rating }) {
   return (
     <div className="movie">
-      <img src={poster} alt={title} title={title} />
+      <div className="movie__poster">
+        <img src={poster} alt={title} title={title} />
+      </div>
       <div className="movie__data">
         <h3 className="movie__title">{title}</h3>
         <h5 className="movie__year">{year}</h5>
@@ -17,7 +19,8 @@ function Movie({ year, title, summary, poster, genres, rating }) {
           ))}
         </ul>
         <span className="movie_rating">⭐{rating}</span>
-        <p className="movie__summary">{summary.slice(0, 140)}...</p>
+        <p className="movie__summary">{summary.slice(0, 100)}...</p>
+        <button className="movie__subscribe">view it right now</button>
       </div>
     </div>
   );
