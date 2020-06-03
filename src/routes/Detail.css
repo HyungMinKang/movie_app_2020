@@ -1,0 +1,25 @@
+body,
+#root {
+  width: 100%;
+}
+
+.detail_container {
+  display: flex;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.movie__data {
+  margin-top: 50px;
+  background-color: black;
+  height: 40vh;
+}
+
+.movie__subscribe {
+  margin-top: 50px;
+}

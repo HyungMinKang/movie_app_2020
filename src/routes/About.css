@@ -1,0 +1,24 @@
+body,
+#root {
+  width: 100%;
+}
+
+.about {
+  display: flex;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo img {
+  margin-right: 100px;
+  border-radius: 10px;
+}
